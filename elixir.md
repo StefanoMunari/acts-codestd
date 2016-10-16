@@ -1,5 +1,7 @@
 # ELIXIR CODING CONVENTIONS
 * [Naming conventions](http://elixir-lang.org/docs/master/elixir/naming-conventions.html)
+* [Programming conventions](https://github.com/StefanoMunari/city-codestd/blob/elixir_p0/elixir/programming.md)
+* [Project organization](https://github.com/StefanoMunari/city-codestd/blob/elixir_p0/elixir/project.md)
 * [Documenting functions/types](http://elixir-lang.org/docs/master/elixir/typespecs.html)
 * [Commenting code (commenting + doctest)](http://elixir-lang.org/docs/master/elixir/writing-documentation.html)
 ## Note
