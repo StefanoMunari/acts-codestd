@@ -1,6 +1,6 @@
 # ADA CODING CONVENTIONS
- * _Official Ada standard conventions_  
-REFERENCE: ftp://ftp.estec.esa.nl/pub/wm/anonymous/wme/bssc/bssc983.pdf  
+ * _Official Ada standard conventions_
+REFERENCE: ftp://ftp.estec.esa.nl/pub/wm/anonymous/wme/bssc/bssc983.pdf
 [Useful book/reference on language constructs](https://en.wikibooks.org/wiki/Ada_Programming)
 
 # OUR CONVENTIONS
@@ -163,3 +163,68 @@ iteration variable.
 _You'll not always be able to use the_ `for .. of` _construct, because it has
 to be supported by the collection you are iterating over: for example,
 GNATCOLL_JSON's arrays do not support this operation._
+
+### Body length
+
+
+| Lines |      Level     |
+|:-----:|:--------------:|
+| <=100 |     Optimal    |
+|  ~150 |   Acceptable   |
+| >>150 | Not acceptable |
+
+A package body should be _at most ~150 lines long_.
+
+If it is possible, a body longer than 150 lines _should be splitted in multiple
+implementation files_ using the `is separate` keyword.
+
+Example of a package body with `is separate` usage:
+
+```
+-- imports ...
+
+package body Body_Example is
+
+   function Function0 (This : in Example_Object) return Natural is separate;
+   procedure Procedure0 is separate;
+
+end Body_Example;
+```
+
+The definitions of Function0 and Procedure0 are placed in their corresponding
+files:
+
+```
+-- FILENAME : body_example.function0.adb
+-- NOTE : inherits imports from the parent package body file
+--       It is NOT possible to add other import directives in this file
+
+separate (Body_Example.Function0)
+function Function0 (This : in Example_Object)
+return Natural
+is
+  -- declarations defined here
+begin
+  -- function body defined here
+end Function0;
+
+```
+
+
+```
+-- FILENAME : body_example.procedure0.adb
+-- NOTE : inherits imports from the parent package body file
+--       It is NOT possible to add other import directives in this file
+
+separate (Body_Example.Procedure0)
+procedure Procedure0
+is
+  -- declarations defined here
+begin
+  -- procedure body defined here
+end Procedure0;
+
+```
+
+Note that the `is separate` keyword can be used only for package related
+functions/procedures. It does not work for task bodies.
