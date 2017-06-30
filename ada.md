@@ -6,6 +6,52 @@ REFERENCE: ftp://ftp.estec.esa.nl/pub/wm/anonymous/wme/bssc/bssc983.pdf
 # OUR CONVENTIONS
 
 
+## General rules
+
+* Use spaces, not tabs
+
+* Indent with 3 spaces
+
+* Names are capitalized with _Pascal_Case_
+
+* Do not exceed 80 columns, unless you have no other solutions
+  * If parameters/arguments cause a line to exceed 80 cols, move the arguments
+    to the following line and leave an open bracket in the first line:
+
+  ```
+     procedure Op (                             -- notice the open bracket here
+        Very_Very_Very_Long_Arg1 : in out Type1);
+  ```
+
+* Leave a space before an open bracket: `A.Op (Arg)`
+
+* Indent single-line comments so they are aligned with the beginning of the
+  line they are referring
+  * Corner case: if no indentation is applied to the line a comment is
+    referring, do not apply any indentation to the comment itself
+
+  ```
+  -- Import Ada.Finalization
+  with Ada.Finalization;       -- the comment above is OK
+
+  -- Calling X of A
+     A.X;                      -- the comment above is OK
+
+
+     -- Calling X of A
+     A.X;                      -- the comment above is NOT well-formatted
+  ```
+
+* Do not leave trailing whitespaces: if possible, use something like this
+  [Sublime plugin](https://github.com/SublimeText/TrailingSpaces)
+
+* If possible, align colons `:` of multiple contigous line of the same block
+  (e.g., arguments, variable declarations, assignments, parameters, ...)
+
+* If possible, align arrows `=>` of named arguments in function/procedure
+  invocations
+
+
 ## File headers
 
 We consider header all of what is above the `package [body] X.Y.Z is` line.
