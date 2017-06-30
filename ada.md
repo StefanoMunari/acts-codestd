@@ -143,3 +143,23 @@ The argument list should be formatted as follows:
       The_Arg3                 :    out Type3;  -- aligned with arg1
       Arg4                     : access Type4); -- aligned with arg1
 ```
+
+
+## Body files
+
+The same rules for specification (`.ads`) files are valid for body (`.adb`)
+files.
+
+When invoking an operation, you should use named arguments if:
+
+* There are 3/4 or more arguments
+* Arguments may be inverted without making the compiler raise a warning/error
+  because of their type
+
+Use the `for Element of Elements` construct to iterate over a collection
+`Elements`: it is a for-each loop, and at each iteration one of its elements
+`Element` will be fetched from the collection without the need of declaring an
+iteration variable.
+_You'll not always be able to use the_ `for .. of` _construct, because it has
+to be supported by the collection you are iterating over: for example,
+GNATCOLL_JSON's arrays do not support this operation._
