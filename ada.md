@@ -87,6 +87,8 @@ Where:
 * `with`'s with different initial prefix are separated by an additional newline
   (as in the format example above)
 
+`limited with`'s should be avoided whenever possible.
+**Rationale**: they cause hardly-debuggable errors at link time.
 
 We don't know yet if our files will have a license at their beginning.
 
