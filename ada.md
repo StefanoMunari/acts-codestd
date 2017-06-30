@@ -5,6 +5,7 @@ REFERENCE: ftp://ftp.estec.esa.nl/pub/wm/anonymous/wme/bssc/bssc983.pdf
 
 # OUR CONVENTIONS
 
+
 ## File headers
 
 We consider header all of what is above the `package [body] X.Y.Z is` line.
@@ -42,4 +43,55 @@ Where:
 
 
 We don't know yet if our files will have a license at their beginning.
->>>>>>> add header conventions
+
+
+## Specification files
+
+Specification files should be formatted as follows:
+
+```
+package X.Y.Z is
+
+   package A renames B; -- if any
+   ...
+
+   type T is [add type definition here]; -- if any
+   ...
+
+   [not] overriding -- only if operation is defined on instances of this package
+   [ procedure | function ] Op ([add arguments here: see rules below]);
+   ...
+
+private
+
+   type T is [add type definition here]; -- if any
+   ...
+
+   [not] overriding -- only if operation is defined on instances of this package
+   [ procedure | function ] Op ([add arguments here: see rules below]);
+   ...
+```
+
+The argument list should be formatted as follows:
+
+* If there are only `in` (or only `out`) arguments, do not add any offset
+  before their type
+
+* In case of `in` **and** `out` arguments, they have to be aligned as follows:
+
+```
+   procedure Op (Arg1      : in out Type1;  -- no offset needed here
+                 Such_Arg2 : in     Type2;  -- notice the offset of Type2
+                 The_Arg3  :    out Type3;  -- notice the offset of Type3
+                 Arg4      : access Type4); -- no offset needed here
+```
+
+* If the first line exceeds 80 columns, format the arguments as follows
+
+```
+   procedure Op (
+      Very_Very_Very_Long_Arg1 : in out Type1;  -- would have exceeded 80 cols
+      Such_Arg2                : in     Type2;  -- aligned with arg1
+      The_Arg3                 :    out Type3;  -- aligned with arg1
+      Arg4                     : access Type4); -- aligned with arg1
+```
