@@ -199,7 +199,7 @@ files:
 -- NOTE : inherits imports from the parent package body file
 --       It is NOT possible to add other import directives in this file
 
-separate (Body_Example.Function0)
+separate (Body_Example)
 function Function0 (This : in Example_Object)
 return Natural
 is
@@ -216,7 +216,7 @@ end Function0;
 -- NOTE : inherits imports from the parent package body file
 --       It is NOT possible to add other import directives in this file
 
-separate (Body_Example.Procedure0)
+separate (Body_Example)
 procedure Procedure0
 is
   -- declarations defined here
