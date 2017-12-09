@@ -23,18 +23,20 @@ hands-on experience with the programming language applied to the ACTS project
 
 * Create an Elixir project by using `mix new _project\_name_`
 
-* Typical folders/files in a Elixir project:
-  + *lib/*: place for source code
-  + *mix.exs*: Compilation options
-  + *config/config.exs*: Configuration file
-  + *test/*: Folder for tests
+* Typical folders/files structure of an Elixir project:
 
-  If the application can be run under different modes, the configuration files will typically be found in:
-  + *config/dev.exs*: Configuration file for **development** mode
-  + *config/prod.exs*: Configuration file for **production** mode
-  + *config/test.exs*: Configuration file for **test** mode
+	+ *lib/*: place for source code
+	+ *mix.exs*: Compilation options
+	+ *config/config.exs*: Configuration file
+	+ *test/*: Folder for tests
 
-* Structure the project so that it is composed of modules by dividing the *lib*
+  If the application has been structured to be deployed under different deployment environments ([Martin Fowler - CI](https://martinfowler.com/articles/continuousIntegration.html), [Wiki - deployment environment](https://en.wikipedia.org/wiki/Deployment_environment)), the configuration files will typically be placed in:
+
+  	+ *config/dev.exs*: Configuration file for **development** mode
+  	+ *config/prod.exs*: Configuration file for **production** mode
+  	+ *config/test.exs*: Configuration file for **test** mode
+
+* Structure the project as a composition of modules by dividing the *lib*
   folder in subdirectories
 
 
