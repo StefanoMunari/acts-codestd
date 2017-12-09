@@ -1,8 +1,9 @@
 # Ada Coding Conventions
 
   * _Official Ada standard conventions_  
-  * reference: ftp://ftp.estec.esa.nl/pub/wm/anonymous/wme/bssc/bssc983.pdf
-[Useful book/reference on language constructs](https://en.wikibooks.org/wiki/Ada_Programming)  
+  * References:
+    * ftp://ftp.estec.esa.nl/pub/wm/anonymous/wme/bssc/bssc983.pdf
+    * [Useful book/reference on language constructs](https://en.wikibooks.org/wiki/Ada_Programming)  
 
 # Our Conventions
 
