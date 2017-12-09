@@ -1,10 +1,15 @@
-# ADA CODING CONVENTIONS
- * _Official Ada standard conventions_
-REFERENCE: ftp://ftp.estec.esa.nl/pub/wm/anonymous/wme/bssc/bssc983.pdf
-[Useful book/reference on language constructs](https://en.wikibooks.org/wiki/Ada_Programming)
+# ADA CODING CONVENTIONS  
+  * _Official Ada standard conventions_  
+  * reference: ftp://ftp.estec.esa.nl/pub/wm/anonymous/wme/bssc/bssc983.pdf
+[Useful book/reference on language constructs](https://en.wikibooks.org/wiki/Ada_Programming)  
 
 # OUR CONVENTIONS
 
+* These rules are a very lightweight distilled version of the ESA code standards adapted to our project
+
+* These rules have higher priority than other rules because they are language-specific
+
+* These rules override the general rules defined in general.md file.
 
 ## General rules
 
